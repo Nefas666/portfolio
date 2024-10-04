@@ -49,20 +49,20 @@ const PPNeueMontreal = LocalFont({
   variable: "--font-PPNeueMontrealSans",
 });
 const PPNeueMontrealSemibold = LocalFont({
-  src: "../public/fonts/PPNeueMontreal-Semibold.woff2",
-  variable: "--font-PPNeueMontrealSemibold",
+  src: "../public/fonts/PPNeueMontreal-SemiBold.woff2",
+  variable: "--font-PPNeueMontrealSemiBold",
 });
 
 export default function RootLayout({ children }) {
   return (
     <html
-      lang='en'
-      className={[
+      lang='en'>
+        <head className={[
         inter.variable,
         calSans.variable,
         PPNeueMontreal.variable,
         PPNeueMontrealSemibold.variable,
-      ].join(" ")}>
+      ].join(" ")}></head>
       <body
         className={`bg-black ${
           process.env.NODE_ENV === "development" ? "debug-screens" : ""
