@@ -7,4 +7,12 @@
     -webkit-text-stroke: 1px rgba(255,255,255,0.3);
   }
 } 
+@font-face {
+  font-family: 'PPNeueMontreal-Thin';
+  src: url('./public/fonts/PPNeueMontreal-Thin.woff2');
+}
+@font-face {
+  font-family: 'PPNeueMontreal-SemiBold';
+  src: url('./public/fonts/PPNeueMontreal-SemiBold.woff2');
+}
 
