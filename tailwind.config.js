@@ -21,8 +21,8 @@ module.exports = {
 			fontFamily: {
 				sans: ["var(--font-inter)", ...defaultTheme.fontFamily.sans],
 				display: ["var(--font-calsans)"],
-				'montreal':['PPNeueMontreal-Thin', "sans-serif"],
-				'montreal-semibold':['PPNeueMontreal-SemiBold', "sans-serif"]
+				'montreal':["var(--font-PPNeueMontrealSans)"],
+				'montreal-semibold':["var(--font-PPNeueMontrealSemibold)"]
 			},
 			backgroundImage: {
 				"gradient-radial":
