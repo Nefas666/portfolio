@@ -22,7 +22,7 @@ module.exports = {
 				sans: ["var(--font-inter)", ...defaultTheme.fontFamily.sans],
 				display: ["var(--font-calsans)"],
 				'montreal':["var(--font-PPNeueMontrealSans)"],
-				'montreal-semibold':["var(--font-PPNeueMontrealSemibold)"]
+				'montreal-semibold':["var(--font-PPNeueMontrealSemiBold)"]
 			},
 			backgroundImage: {
 				"gradient-radial":

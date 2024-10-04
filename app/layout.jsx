@@ -49,7 +49,7 @@ const PPNeueMontreal = LocalFont({
   variable: "--font-PPNeueMontrealSans",
 });
 const PPNeueMontrealSemibold = LocalFont({
-  src: "../public/fonts/PPNeueMontreal-Semibold.woff2",
+  src: "../public/fonts/PPNeueMontreal-SemiBold.woff2",
   variable: "--font-PPNeueMontrealSemiBold",
 });
 
