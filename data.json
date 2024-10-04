@@ -1,9 +1,10 @@
 {
-	"description": "My hobby projects, most of them are Next.js apps deployed to Vercel.",
-	"githubUsername": "octocat",
+	"description": "Born in 1992 in Milan, Italy, I am a passionate web designer with a clear vision: to make the digital world more diverse and inspiring. Each project is an opportunity to innovate and push the boundaries of traditional design.",
+	"githubUsername": "Nefas666",
 	"avatarUrl": "",
-	"displayName": "",
-	"email": "",
+	"displayName": "Selene Manno",
+	"jobRole": "Frontend Developer",
+	"email": "essemme.dev@gmail.com",
 	"projects": {
 		"blacklist": [],
 		"heroNames": []
