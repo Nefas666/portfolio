@@ -50,7 +50,7 @@ const PPNeueMontreal = LocalFont({
 });
 const PPNeueMontrealSemibold = LocalFont({
   src: "../public/fonts/PPNeueMontreal-Semibold.woff2",
-  variable: "--font-PPNeueMontrealSemibold",
+  variable: "--font-PPNeueMontrealSemiBold",
 });
 
 export default function RootLayout({ children }) {
