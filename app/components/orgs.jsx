@@ -7,7 +7,7 @@ export const ProfileOrganizations = async ({ username }) => {
 	const organizations = (await getUserOrganizations(username)).data.user?.organizations.nodes;
 
 	return (
-		<p>I'm building stuff{
+		<p className="font-montreal text-gray-50 text-sm">Sometimes I build stuff{
 			organizations?.length > 0 ? <>
 				{" "}at{" "}
 				<span className="mt-3 overflow-hidden">
