@@ -5,7 +5,7 @@ const HomeNavigation = ({ customUsername }) => {
   const navigation = [
     { name: "•", href: "/" },
     { name: "Projects", href: "/projects" },
-    { name: "Contact", href: "/contact" },
+    // { name: "Contact", href: "/contact" },
   ];
 
   const TryYourself = ({ customUsername }) => {
@@ -38,7 +38,7 @@ const HomeNavigation = ({ customUsername }) => {
             {item.name}
           </Link>
         ))}
-        <TryYourself customUsername={customUsername} />
+        {/* <TryYourself customUsername={customUsername} /> */}
       </ul>
     </nav>
   );

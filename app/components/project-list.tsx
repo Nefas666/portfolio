@@ -2,26 +2,20 @@
 
 import React, { useRef, useEffect } from 'react';
 import Link from "next/link";
-import { StarIcon, MarkGithubIcon } from '@primer/octicons-react';
+import {Project, ProjectListProps} from '../models/Projects'
+import {formatDate} from '../utils/date-format'
 
-
-interface Project {
-    name: string;
-    id: string;
-    description: string;
-    stargazers_count: number;
-    created_at: string | number | Date;
-    updated_at?: string;
-    html_url: string;
-}
-
-interface ProjectListProps {
-    heroes: Project[];
-    sorted: Project[];
-}
 
 const ProjectList: React.FC<ProjectListProps> = ({ heroes, sorted }) => {
     const projectListRef = useRef<HTMLDivElement | null>(null);
+
+    const filteredHeroes = heroes.reduce((acc, project) => {
+        if (!project.name.includes('Nefas666')) {
+            acc.push(project);
+        }
+        return acc;
+    }, [] as Project[]);
+    
 
     const handleScroll = () => {
         if (projectListRef.current) {
@@ -44,31 +38,34 @@ const ProjectList: React.FC<ProjectListProps> = ({ heroes, sorted }) => {
         };
     }, []);
 
+    const allProjects = [...filteredHeroes, ...sorted];
+
     return (
         <div
             ref={projectListRef}
-            className="project-list h-screen overflow-auto relative "
+            className="project-list h-screen overflow-auto relative"
         >
-            
-            {heroes.map((project) => (
+
+            {allProjects.map((project) => (
                 <Link key={project.id} href={project.html_url} legacyBehavior>
-                    <div className="relative h-[35%] flex flex-col items-start justify-start gap-4 bg-transparent">
-                        <span className="text-xs duration-1000 text-zinc-200 group-hover:text-white group-hover:border-zinc-200">
+                    <div className="relative h-[22%] max-w-[80%] flex flex-col items-baseline justify-end gap-4 bg-transparent">
+                        <h2 className="block text-4xl text-left uppercase font-montreal text-white">{project.name}</h2>
+                        <span className="inline-flex text-xs font-montreal duration-1000 text-gray-50 group-hover:text-white group-hover:border-zinc-200">
                             <time dateTime={new Date(project.created_at).toISOString()} title="Created">
-                                {new Date(project.created_at).toISOString().substring(0, 10)}
+                                {formatDate(project.created_at)}
                             </time>
+                            <span className="inline-flex text-xs uppercase font-montreal duration-1000 text-gray-50 group-hover:text-white group-hover:border-zinc-200">
+                                ///{project.topics.join('/')}
+                                </span>
+
                         </span>
-                        <h2 className="block text-4xl text-left font-montreal text-white">{project.name}</h2>
-                        <p className="text-sm font-montreal text-zinc-200 relative">{project.description}</p>
+                        <p className="text-xs font-montreal text-zinc-200 relative">{project.description}</p>
                     </div>
                 </Link>
+
             ))}
 
-            {/* {sorted.map((project) => (
-                <div key={project.id} className="flex items-center justify-center border-b border-gray-100 hover:border-gray-50 hover:text-gray-50 bg-transparent">
-                    <h2 className="text-xl font-bold text-gray-800">{project.name}</h2>
-                </div>
-            ))} */}
+
         </div>
     );
 };
