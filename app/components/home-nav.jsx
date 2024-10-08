@@ -1,11 +1,16 @@
+'use client'
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { ArrowRightIcon } from "@primer/octicons-react";
 
 const HomeNavigation = ({ customUsername }) => {
-  const navigation = [
+  const pathname = usePathname(); 
+  
+    const navigation = [
     { name: "•", href: "/" },
     { name: "Projects", href: "/projects" },
-    // { name: "Contact", href: "/contact" },
+    { name: "Contact", href: "/contact" },
   ];
 
   const TryYourself = ({ customUsername }) => {
@@ -34,11 +39,11 @@ const HomeNavigation = ({ customUsername }) => {
               item.href +
               (customUsername ? `?customUsername=${customUsername}` : "")
             }
-            className='duration-500 text-gray-100 hover:text-gray-300 font-montreal text-sm tracking-widest'>
+            className={`duration-500 text-gray-100 hover:text-gray-300 font-montreal text-sm tracking-widest ${pathname === item.href ? 'border-l border-gray-50 px-1.5' : ''}`}>
             {item.name}
           </Link>
         ))}
-        {/* <TryYourself customUsername={customUsername} /> */}
+        <TryYourself customUsername={customUsername} />
       </ul>
     </nav>
   );

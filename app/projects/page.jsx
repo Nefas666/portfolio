@@ -1,8 +1,4 @@
 import React from "react";
-import { Card } from "../components/card";
-// import { UserTimeline } from "../components/timeline";
-import { Article } from "./article";
-import chunk from "lodash/chunk";
 import data from "../../data.json";
 import { getRepos, getPinnedRepos } from "../data";
 import HomeNavigation from "../components/home-nav";

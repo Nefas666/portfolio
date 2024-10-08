@@ -13,3 +13,7 @@ export interface ProjectListProps {
     heroes: Project[];
     sorted: Project[];
 }
+
+export interface ProjectItemProps {
+    project: Project;
+}
