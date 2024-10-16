@@ -51,17 +51,20 @@ const Orb = ({ hue }) => {
   const circleRef = useRef(null);
 
   useEffect(() => {
-    anime({
-      targets: circleRef.current,
-      translateY: [
-        { value: -1000, duration: 30000, easing: 'easeInOutSine' },
-        { value: 1000, duration: 30500, easing: 'easeInOutSine' },
-      ],
-      rotate: function() { return anime.random(180, -360); },
-      translateX: function() { return anime.random(50, 250); },
-      loop: true,
-      duration: 50000,
-    });
+    if (window.innerWidth > 768) {
+      //console.log('it is');
+      anime({
+        targets: circleRef.current,
+        translateY: [
+          { value: -1000, duration: 30000, easing: 'easeInOutSine' },
+          { value: 1000, duration: 30500, easing: 'easeInOutSine' },
+        ],
+        rotate: function() { return anime.random(180, -360); },
+        translateX: function() { return anime.random(50, 250); },
+        loop: true,
+        duration: 50000,
+      });
+    }
   }, []);
 
   return (

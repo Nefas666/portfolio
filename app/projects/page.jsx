@@ -41,7 +41,7 @@ export default async function ProjectsPage({
           <HomeNavigation customUsername={customUsername} />
         </div>
       </section>
-      <ProjectList heroes={heroes} sorted={sorted} />
+        <ProjectList heroes={heroes} sorted={sorted} />
     </div>
   );
 }

@@ -16,7 +16,7 @@ const HomeNavigation = ({ customUsername }) => {
   const TryYourself = ({ customUsername }) => {
     const href = customUsername ? "/" : "/search";
     return (
-      <div className='absolute bottom-5 pb-5 '>
+      <div className='absolute bottom-5 pb-5'>
         <Link
           href={href}
           className='duration-500 text-gray-100 hover:text-gray-300 font-montreal-semibold text-sm tracking-widest'>
@@ -30,7 +30,7 @@ const HomeNavigation = ({ customUsername }) => {
   };
 
   return (
-    <nav className='my-16 animate-fade-in'>
+    <nav className='my-16 animate-fade-in max-h-screen'>
       <ul className='flex flex-col align-left justify-start gap-4'>
         {navigation.map((item) => (
           <Link
@@ -43,7 +43,8 @@ const HomeNavigation = ({ customUsername }) => {
             {item.name}
           </Link>
         ))}
-        <TryYourself customUsername={customUsername} />
+        
+        {pathname === "/" && <TryYourself customUsername={customUsername} />}
       </ul>
     </nav>
   );
