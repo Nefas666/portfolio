@@ -1,6 +1,4 @@
-# 🔗 [https://portfolio-kzgn8iofr-nefas666s-projects.vercel.app/]
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/import?repository-url=https%3A%2F%2Fgithub.com%2Fjirihofman%2Fportfolio&env=GH_TOKEN,VC_TOKEN)
+# 🔗 [www.n3fas.me]
 
 Personal portfolio website, forked from [jirihofman](https://github.com/jirihofman/portfolio). I have created a different theme from the original project while maintaining its functionalities and adding few more dependencies. You can see a preview at [https://portfolio-zulyh9wvd-nefas666s-projects.vercel.app/].
 
