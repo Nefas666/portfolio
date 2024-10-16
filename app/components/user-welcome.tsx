@@ -1,13 +1,11 @@
-import data from "../../data.json";
-
 const UserWelcome = async ({ promise }) => {
-    const user = await promise;
+    const userData = await promise;
 
     return (
         <p className="font-montreal text-gray-50 text-sm">
-            Hi, my name is {user.name || data.displayName}
+            Hi, my name is {userData.name}
             {". "}
-            {user.bio}
+            {userData.bio} 
         </p>
     );
 };

@@ -9,11 +9,13 @@ const UserSearch = ({ user }) => {
     const [username, setUsername] = useState(user);
     const [userExists, setUserExists] = useState(false);
     const [loading, setLoading] = useState(false);
+    const [isSearching, setIsSearching] = useState(false); 
 
     const handleUsernameChange = (e) => {
         setUsername(e.target.value);
         // Hacky way to reset userExists when username is changed.
         setUserExists(-1);
+        setIsSearching(true);
     };
 
     const handleSearch = async () => {
@@ -32,7 +34,7 @@ const UserSearch = ({ user }) => {
     const newUsername = username !== user && username;
 
     return (
-        <div className='w-96'>
+        <div className='w-96 font-montreal'>
             <div className="relative p-6 flex-auto">
                 <label className="block text-white text-sm font-bold mb-1" htmlFor="username">
                     GitHub username

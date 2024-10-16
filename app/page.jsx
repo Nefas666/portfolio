@@ -17,33 +17,34 @@ export default function Home({ searchParams }) {
   );
 }
 
-const LandingComponent = async ({ searchParams: { customUsername } }) => {
+const LandingComponent = async ({
+  searchParams: { customUsername },
+  isSearching,
+}) => {
   const username =
     customUsername || process.env.GITHUB_USERNAME || data.githubUsername;
   const jobrole = data.jobRole;
-  const bio = data.description;
   const promise = getUser(username);
 
   return (
-      <main className='grid lg:grid-cols-2 gap-4 overflow-hidden m-5 p-5'>
-        <section className='row-span-1'>
-          <UserInfo username={username} jobrole={jobrole} />
-          <div className='row-span-1 font-montreal gap-2'>
-            <HomeNavigation customUsername={customUsername} />
-          </div>
-        </section>
-        <section className='row-span-auto flex flex-row justify-end items-end'>
-          <div className='absolute text-left right-5 bottom-5 lg:pb-5 lg:pr-5 pb-3 pr-3 animate-fade-in lg:max-w-[200px] md:max-w-[160px] max-w-[130px]'>
-            <h2 className='font-montreal text-gray-50 text-sm'>
-              <Suspense fallback={<p>Loading...</p>}>
-                <UserWelcome promise={promise} />
-                <ProfileOrganizations username={username} />
-                <RecentActivity username={username} />
-              </Suspense>
-              <p>{bio}</p>
-            </h2>
-          </div>
-        </section>
-      </main>
+    <main className='grid lg:grid-cols-2 gap-4 overflow-hidden m-5 p-5'>
+      <section className='row-span-1'>
+        <UserInfo username={username} jobrole={jobrole} />
+        <div className='row-span-1 font-montreal gap-2'>
+          <HomeNavigation customUsername={customUsername} />
+        </div>
+      </section>
+      <section className='row-span-auto flex flex-row justify-end items-end'>
+        <div className='absolute text-left right-5 bottom-5 lg:pb-5 lg:pr-5 pb-3 pr-3 animate-fade-in lg:max-w-[200px] md:max-w-[160px] max-w-[130px]'>
+          <h2 className='font-montreal text-gray-50 text-sm'>
+            <Suspense fallback={<p>Loading...</p>}>
+              <UserWelcome promise={promise} isSearching={isSearching} />
+              <ProfileOrganizations username={username} />
+              <RecentActivity username={username} />
+            </Suspense>
+          </h2>
+        </div>
+      </section>
+    </main>
   );
 };
